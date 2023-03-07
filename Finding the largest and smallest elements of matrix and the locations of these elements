@@ -1,0 +1,55 @@
+package javaapplication6;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author cengi
+ */
+public class JavaApplication6 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         Scanner input=new Scanner(System.in);
+        
+        System.out.println("N sayısı giriniz:");
+        int N=input.nextInt();
+        
+        int A[][]=new int [N][N];
+        
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.println("A("+(i+1)+","+(j+1)+") =");
+                A[i][j]=input.nextInt();
+            }
+        }
+        int enb=A[0][0];
+        int enk=A[0][0];
+        int enbsatir=1;
+        int enbsütun=1;
+        int enksatir=1;
+        int enksütun=1;
+        
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (A[i][j]>enb) {
+                    enb=A[i][j];
+                    enbsatir=i;
+                    enbsütun=j;
+                }
+                if (A[i][j]<enk) {
+                    enk=A[i][j];
+                    enksatir=i;
+                    enksütun=j;                    
+                }
+            }
+        }
+        System.out.println("En küçük eleman: "+enk);
+        System.out.println("En küçük elemanın konumu: "+enksatir+".satır ve "+enksütun+". sütunda");
+        System.out.println("En büyük eleman: "+enb);
+        System.out.println("En büyük elemanın konumu: "+(enbsatir+1)+".satır ve "+(enbsütun+1)+". sütunda");
+    }
+    
+}
