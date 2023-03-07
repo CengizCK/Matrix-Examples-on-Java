@@ -1,0 +1,42 @@
+package javaapplication100;
+
+import java.util.Scanner;
+
+public class JavaApplication100 {
+
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+
+        System.out.println("N sayısını giriniz");
+        int n=input.nextInt();
+        int[][]A=new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 0; j < n; j++) {
+                System.out.print("A("+(i+1)+","+(j+1)+") =");
+                A[i][j]=input.nextInt();
+            }
+        }
+        System.out.println("A matrisi ");
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 0; j < n ; j++) {
+                System.out.print(A[i][j]+" "); 
+
+            }
+            System.out.println("");
+        }
+
+        int min=A[0][0];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+
+            if(min>=A[i][j]){
+                min=A[i][j];
+                System.out.println((j+1)+" inci sütun en küçük sayısı = "+min);
+            }
+            }
+        }
+    }
+}
